@@ -1,0 +1,13 @@
+{
+  "name": "@watchers/activitywatch",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {},
+  "author": "Madeline Cameron <maddie@qnzl.co>",
+  "license": "MIT",
+  "dependencies": {
+    "@qnzl/auth": "^1.0.9",
+    "jose": "^1.17.2",
+    "node-fetch": "^2.6.0"
+  }
+}
