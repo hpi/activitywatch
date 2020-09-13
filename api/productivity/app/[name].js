@@ -33,6 +33,6 @@ const handler = async (req, res, next) => {
 }
 
 module.exports = (req, res) => {
-  return authClaim(CLAIMS.activityWatch.get)(req, res, handler)
+  return authCheck(CLAIMS.activityWatch.get)(req, res, handler)
 }
 
