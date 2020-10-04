@@ -2,7 +2,9 @@
   "name": "@watchers/activitywatch",
   "version": "1.0.0",
   "description": "",
-  "scripts": {},
+  "scripts": {
+    "start": "vercel dev --listen 3001"
+  },
   "author": "Madeline Cameron <maddie@qnzl.co>",
   "license": "MIT",
   "dependencies": {
