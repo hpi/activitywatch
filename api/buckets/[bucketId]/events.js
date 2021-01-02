@@ -38,4 +38,3 @@ const handler = async (req, res, next) => {
 module.exports = (req, res) => {
   return authCheck(CLAIMS.activityWatch.get)(req, res, handler)
 }
-
