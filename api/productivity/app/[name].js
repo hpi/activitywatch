@@ -8,7 +8,8 @@ const awUrl = process.env.AW_URL
 
 const productiveApps = [
   `st-256color`,
-  `Insomnia`
+  `Insomnia`,
+  `Terminal`,
 ]
 
 const distractingApps = []
