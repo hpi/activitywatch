@@ -9,7 +9,6 @@ const awUrl = process.env.AW_URL
 const handler = async (req, res, next) => {
   const { authorization } = req.headers
 
-  console.log("GET BUCKETS")
   const response = await fetch(`${awUrl}/api/v1/buckets`, {
     headers: {
       Authorization: authorization
@@ -18,7 +17,6 @@ const handler = async (req, res, next) => {
 
   const body = await response.json()
 
-  console.log("BODY!", body)
   return res.send(Object.values(body))
 }
 
