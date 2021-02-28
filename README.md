@@ -1,4 +1,4 @@
-## @watchers/activitywatch
+## activitywatch
 
 ### Setup
 
