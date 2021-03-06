@@ -9,6 +9,8 @@
   "license": "MIT",
   "dependencies": {
     "@qnzl/auth": "^1.0.9",
+    "commander": "^7.1.0",
+    "dayjs": "^1.10.4",
     "jose": "^1.17.2",
     "node-fetch": "^2.6.0"
   }
