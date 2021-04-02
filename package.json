@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "vercel dev --listen 3001"
+    "build": "pkg bin/activitywatch.js --out-path pkg/"
   },
   "author": "Madeline Cameron <maddie@qnzl.co>",
   "license": "MIT",

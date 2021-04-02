@@ -41,11 +41,22 @@ async function dump({
   exportFormat,
 }) {
   let events
+  let currentJSON = {}
 
   const filledExportFormat = exportFormat
     .replace('{date}', dayjs().format('YYYY-MM-DD'))
+    .replace('{bucket}', bucket)
 
   const EXPORT_PATH = resolve(exportPath, filledExportFormat)
+
+  try {
+    const currentValue = await promisify(fs.readFile)(EXPORT_PATH, 'utf8')
+
+    if (currentValue) {
+      currentJSON = JSON.parse(currentValue)
+    }
+  } catch (e) {
+  }
 
   try {
     const eventsRes = await fetch(`${AW_URL}/api/v1/get/${bucket}?date=${dayjs().format('YYYY-MM-DD')}`, {
@@ -55,14 +66,11 @@ async function dump({
     })
 
     events = await eventsRes.json()
-
-    console.log("EVENT:", events)
   } catch (e) {
     return onfatal(e)
   }
 
-  const dump = JSON.stringify({ events })
+  const dump = JSON.stringify({ [bucket]: events, ...currentJSON })
 
   await promisify(fs.writeFile)(EXPORT_PATH, dump)
 }
-
