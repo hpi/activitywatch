@@ -26,6 +26,10 @@ class DAL:
 
     def events(self, eventType) -> Iterator[Res[Json]]:
       for r in self.raw():
+        if eventType not in r:
+          yield None
+          continue
+
         for event in r[eventType]:
           yield event
 
