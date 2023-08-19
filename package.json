@@ -2,8 +2,11 @@
   "name": "@hpi/activitywatch",
   "version": "0.0.1",
   "description": "",
+  "bin": {
+    "activitywatch": "bin/activitywatch.js"
+  },
   "scripts": {
-    "build": "pkg bin/activitywatch.js --out-path pkg/"
+    "build": "pkg bin/activitywatch.js"
   },
   "author": "Maddie <maddie@qnzl.co>",
   "license": "MIT",
